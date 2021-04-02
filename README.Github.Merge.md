@@ -1,0 +1,1 @@
+https://github.com/wagnerhsu/manning-asp-dot-net-core-in-action-2e/compare/master...andrewlock:master
