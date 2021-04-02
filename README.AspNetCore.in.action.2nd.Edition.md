@@ -7,5 +7,9 @@
 - You should only use the User Secrets provider in development, not in production, so you’re conditionally adding the provider to ConfigurationBuilder. In production, you should use environment variables or Azure Key Vault
 - If you forget to call Configure<T> and inject IOptions<T> into your services, you won’t see any errors, but the T options class won’t be bound to anything and will only have default values in its properties
 - ASPNETCORE_ENVIRONMENT
+
+## 17 Monitoring and troubleshooting errors with logging
+- When you inject `ILogger<T>`, the DI container indirectly calls `ILoggerFactory.CreateLogger<T>()` to create the wrapped ILogger
 ### Reference
 - Safe storage of app secrets in development in ASP.NET Core [docs](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets)
+- Official site [manning](https://www.manning.com/books/asp-net-core-in-action-second-edition)
