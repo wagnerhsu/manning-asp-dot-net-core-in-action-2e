@@ -9,27 +9,26 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>Search</title>
 </head>
 <body>
-    <p>Enter a Search Term (e.g. "i"):</p>
+<p>Enter a Search Term (e.g. "i"):</p>
 
-    <form method="post">
-        Search term:
-        <input asp-for="Input.SearchTerm" />
-        <input type="submit" />
-    </form>
+<form method="post">
+    Search term:
+    <input asp-for="Input.SearchTerm"/>
+    <input type="submit"/>
+</form>
 
-    @if (Model.Results != null)
-    {
-        Results:
-        <ul>
-            @foreach (var product in Model.Results)
-            {
-                <li>@product.Name</li>
-            }
-        </ul>
-    }
+@if (Model.Results != null)
+{
+    <ul>
+        @foreach (var product in Model.Results)
+        {
+            <li>@product.Name</li>
+        }
+    </ul>
+}
 </body>
 </html>

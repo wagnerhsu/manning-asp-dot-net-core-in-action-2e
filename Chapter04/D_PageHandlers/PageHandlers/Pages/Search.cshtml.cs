@@ -11,6 +11,7 @@ namespace PageHandlers
     public class SearchModel : PageModel
     {
         private readonly SearchService _searchService;
+
         public SearchModel(SearchService searchService)
         {
             _searchService = searchService;
@@ -18,6 +19,7 @@ namespace PageHandlers
 
         [BindProperty]
         public BindingModel Input { get; set; }
+
         public List<Product> Results { get; set; }
 
         public void OnGet()
@@ -31,6 +33,7 @@ namespace PageHandlers
                 Results = _searchService.SearchProducts(Input.SearchTerm);
                 return Page();
             }
+
             return RedirectToPage();
         }
 
