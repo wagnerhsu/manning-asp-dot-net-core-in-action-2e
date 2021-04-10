@@ -8,6 +8,10 @@
 
 ## 05 Mapping Urls to Razor Pages using Routing
 
+### Reference
+
+- Beautiful and compact web apis with C# 9, .NET 5.0 and ASP.NET Core [>>](https://www.strathweb.com/2020/10/beautiful-and-compact-web-apis-with-c-9-net-5-0-and-asp-net-core/)
+
 ## 06 The Binding Model: Retrieving and Validating User Input
 
 ## 07 Rendering Html using Razor Views

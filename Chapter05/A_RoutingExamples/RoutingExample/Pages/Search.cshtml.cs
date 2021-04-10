@@ -7,16 +7,19 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
 
 namespace RoutingExample.Pages
 {
     public class SearchModel : PageModel
     {
+        private readonly ILogger<SearchModel> _logger;
         private readonly ProductService _productService;
         private readonly LinkGenerator _link;
 
-        public SearchModel(ProductService productService, LinkGenerator link)
+        public SearchModel(ILogger<SearchModel> logger, ProductService productService, LinkGenerator link)
         {
+            _logger = logger;
             _productService = productService;
             _link = link;
         }
@@ -37,6 +40,11 @@ namespace RoutingExample.Pages
                 values: new { name = "big-widget" },
                 scheme: "https",
                 host: new HostString("example.com"));
+            _logger.LogDebug($"url1:{url1}");
+            _logger.LogDebug($"url2:{url2}");
+            _logger.LogDebug($"url3:{url3}");
+            _logger.LogDebug($"url4:{url4}");
+            
         }
 
         public void OnPost()
