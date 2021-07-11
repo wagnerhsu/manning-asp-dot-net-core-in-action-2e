@@ -1,11 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Options;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace StoreViewerApplication.Pages
 {
@@ -18,7 +13,7 @@ namespace StoreViewerApplication.Pages
         public IndexModel(
             IOptions<List<Store>> stores,
             IOptions<MapSettings> mapSettings,
-            IOptions<AppDisplaySettings> appSettings
+            IOptionsSnapshot<AppDisplaySettings> appSettings
             )
         {
             Stores = stores.Value;
@@ -28,7 +23,6 @@ namespace StoreViewerApplication.Pages
 
         public void OnGet()
         {
-
         }
     }
 }
