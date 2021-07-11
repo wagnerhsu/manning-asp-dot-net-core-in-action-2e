@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace UsingDifferentEnvironments
 {
@@ -50,6 +51,14 @@ namespace UsingDifferentEnvironments
 
             app.UseEndpoints(endpoints =>
             {
+                if (env.IsDevelopment())
+                {
+                    endpoints.MapGet("/debug-config", ctx =>
+                    {
+                        var config = (Configuration as IConfigurationRoot).GetDebugView();
+                        return ctx.Response.WriteAsync(config);
+                    });
+                }
                 endpoints.MapRazorPages();
             });
         }
