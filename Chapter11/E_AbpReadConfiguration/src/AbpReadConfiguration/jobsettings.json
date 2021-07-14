@@ -1,0 +1,17 @@
+{
+  "JobSettings": {
+    "Jobs": [
+      {
+        "Name": "Job1",
+        "Description": "Job1 description"
+      },
+      {
+        "Name": "Job2",
+        "Description": "Job2 description"
+      }
+    ],
+    "GoodJobs": [
+      
+    ]
+  }
+}
